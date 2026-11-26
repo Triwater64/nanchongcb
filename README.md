@@ -40,12 +40,11 @@ npm run dev
 本副本仅保留源码、配置、数据、素材和文档（少于 100 个文件），已排除 `node_modules`、`dist`、`.env` 和临时文件。
 
 - **本地运行**：`npm ci` → 复制 `.env.example` 为 `.env` → `npm run dev` → 打开 `http://localhost:5173`
-- **前端部署**：`npm run build` 生成 `dist/`；`vite.config.ts` 已设 `base: './'`，可直接部署到 GitHub Pages 子路径
-- **GitHub Pages 正确姿势**：仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**；推送 `main` 后 `.github/workflows/deploy-pages.yml` 会自动构建 `dist` 并发布。不要尝试直接发布仓库根目录的 `index.html`（那是 Vite 开发入口，浏览器无法运行 TSX）
-- **后端部署**：`server/` 是 Express 服务，需单独部署到 Render、Railway、Cloud Run 等 Node 主机；配置 `DEEPSEEK_API_KEY`、`DASHSCOPE_API_KEY`、`PORT`
-- **前后端分离**：在部署环境给前端设置 `VITE_API_BASE=https://你的后端域名`，前端 API 请求会自动带上该前缀；留空则走本地 Vite 代理
-- **CI**：`.github/workflows/ci.yml` 在每次 push/pull request 时执行构建校验并上传 `dist` 产物
-- **注意**：GitHub Pages 不能直接运行 Express 后端，API 必须单独部署；演示模式不配 Key 也能用预置数据跑通全流程
+- **推荐：Render 全栈部署（有实时 AI 反馈）**：仓库已带 `render.yaml`，Render 会自动 `npm ci && npm run build`，再用 `npm start` 启动 Express。同一个服务同时托管 `dist/` 页面和 `/api/*`，用户打开一个网址即可实时调用模型，不再有 API 404
+- **GitHub Pages 的限制**：Pages 只能托管静态文件，不能运行 Express，`/api/*` 必然 404、前端拿不到实时结果。若坚持用 Pages，必须把 API 单独部署到 Node 主机，并给前端设置 `VITE_API_BASE=https://你的后端域名`
+- **密钥配置**：在 Render/Railway 控制台设置 `DEEPSEEK_API_KEY` 与 `DASHSCOPE_API_KEY`，不要提交 `.env`
+- **CI**：`.github/workflows/ci.yml` 在每次 push/pull request 时执行构建校验
+- **演示兜底**：未配置 Key 或模型超时时，后端返回预置数据，界面标注"演示降级数据"，流程不中断
 
 ## 新增 API 的扩展点
 

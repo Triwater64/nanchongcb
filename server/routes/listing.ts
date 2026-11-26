@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { chat, extractJson, MODELS, MODEL_LABELS } from '../lib/ai'
-import { LISTING_SYSTEM_PROMPT } from '../lib/prompts/listing'
+import { chat, env, extractJson, MODELS, MODEL_LABELS } from '../lib/ai'
+import { LISTING_SYSTEM_PROMPT, LISTING_SYSTEM_PROMPT_FAST } from '../lib/prompts/listing'
 import { buildImagePrompt } from '../lib/prompts/image'
 import { routeIntent } from '../lib/router'
 import { policies } from '../lib/knowledge'
@@ -58,10 +58,10 @@ router.post('/listing', async (req, res) => {
     const llmResult = await chat({
       provider: 'dashscope',
       model: MODELS.copywriter,
-      system: LISTING_SYSTEM_PROMPT,
+      system: env.dashscopeKey ? LISTING_SYSTEM_PROMPT : LISTING_SYSTEM_PROMPT_FAST,
       user: userPrompt,
       temperature: 0.7,
-      timeoutMs: 40000,
+      timeoutMs: 120000,
     })
 
     let output: ListingOutput | null = null

@@ -13,17 +13,20 @@ export const MODELS = {
   router: 'qwen-turbo',
   /** 多语言Listing文案（百炼） */
   copywriter: 'qwen-plus',
-  /** 深度推理：报价单/选品/数据诊断（DeepSeek） */
-  reasoner: 'deepseek-reasoner',
+  /** 深度推理：报价单/选品/数据诊断（DeepSeek，推理模型） */
+  reasoner: 'deepseek-v4-pro',
   /** 图像生成：通义万相（百炼，异步任务API，不走OpenAI兼容层） */
   image: 'wanx2.1-t2i-plus',
+  /** 未配置百炼Key时，路由/文案任务由 DeepSeek 快模型接管 */
+  fallbackText: 'deepseek-flash',
 } as const
 
 export const MODEL_LABELS: Record<string, string> = {
   [MODELS.router]: 'Qwen-Turbo · 意图路由',
   [MODELS.copywriter]: 'Qwen-Plus · 文案生成',
-  [MODELS.reasoner]: 'DeepSeek-R1 · 深度推理',
+  [MODELS.reasoner]: 'DeepSeek-V4-Pro · 深度推理',
   [MODELS.image]: '通义万相 · 场景图生成',
+  [MODELS.fallbackText]: 'DeepSeek-Flash · 快速任务',
 }
 
 export const env = {
@@ -38,7 +41,7 @@ let dashscopeClient: OpenAI | null = null
 export function getDeepSeek(): OpenAI | null {
   if (!env.deepseekKey) return null
   if (!deepseekClient) {
-    deepseekClient = new OpenAI({ apiKey: env.deepseekKey, baseURL: DEEPSEEK_BASE, timeout: 45000 })
+    deepseekClient = new OpenAI({ apiKey: env.deepseekKey, baseURL: DEEPSEEK_BASE, timeout: 180000 })
   }
   return deepseekClient
 }
@@ -85,22 +88,28 @@ export async function chat(opts: {
   temperature?: number
   timeoutMs?: number
 }): Promise<ChatResult> {
-  const client = opts.provider === 'deepseek' ? getDeepSeek() : getDashscope()
+  let client = opts.provider === 'deepseek' ? getDeepSeek() : getDashscope()
+  let model = opts.model
+  if (!client && opts.provider === 'dashscope' && getDeepSeek()) {
+    client = getDeepSeek()
+    model = MODELS.fallbackText
+  }
   if (!client) {
     return { ok: false, text: '', degraded: true }
   }
   try {
     const resp = await withTimeout(
       client.chat.completions.create({
-        model: opts.model,
+        model,
         messages: [
           { role: 'system', content: opts.system },
           { role: 'user', content: opts.user },
         ],
         temperature: opts.temperature ?? 0.6,
+        ...(model === MODELS.reasoner ? { max_tokens: 4000 } : {}),
       }),
       opts.timeoutMs ?? 40000,
-      `${opts.model} 调用`
+      `${model} 调用`
     )
     const text = resp.choices?.[0]?.message?.content ?? ''
     return { ok: true, text, degraded: false }

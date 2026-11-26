@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nanchong-crossborder-demo
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DEMO_FALLBACK
+        value: true
