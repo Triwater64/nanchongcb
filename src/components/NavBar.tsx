@@ -20,6 +20,10 @@ export default function NavBar({ page, onNavigate, dark }: Props) {
   const [online, setOnline] = useState<number | null>(null)
 
   useEffect(() => {
+    if (location.hostname.endsWith('.github.io') && !import.meta.env.VITE_API_BASE) {
+      setOnline(0)
+      return
+    }
     getJson<{ keys: { deepseek: boolean; dashscope: boolean } }>('/api/health').then((r) => {
       if (r) setOnline(Number(r.keys.deepseek) + Number(r.keys.dashscope))
     })

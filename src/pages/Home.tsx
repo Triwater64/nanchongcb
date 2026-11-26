@@ -9,10 +9,10 @@ interface Props {
 }
 
 const INDUSTRIES = [
-  { key: 'silk', img: '/samples/silk-product.jpg', desc: '千年绸都 · 高坪丝绸产业集群，6A级生丝直供欧美高端市场' },
-  { key: 'auto', img: '/samples/auto-product.jpg', desc: '嘉陵汽配产业带 · 制动/滤清/轴承全链条，E-mark/DOT 认证齐全' },
-  { key: 'agri', img: '/samples/agri-product.jpg', desc: '中国有机农业第一县（西充）· 柑橘/名醋/香米扬帆出海' },
-  { key: 'chemical', img: '/samples/chemical-product.jpg', desc: '嘉陵精细化工园区 · 纺织助剂与涂料配套本地产业协同出海' },
+  { key: 'silk', img: './samples/silk-product.jpg', desc: '千年绸都 · 高坪丝绸产业集群，6A级生丝直供欧美高端市场' },
+  { key: 'auto', img: './samples/auto-product.jpg', desc: '嘉陵汽配产业带 · 制动/滤清/轴承全链条，E-mark/DOT 认证齐全' },
+  { key: 'agri', img: './samples/agri-product.jpg', desc: '中国有机农业第一县（西充）· 柑橘/名醋/香米扬帆出海' },
+  { key: 'chemical', img: './samples/chemical-product.jpg', desc: '嘉陵精细化工园区 · 纺织助剂与涂料配套本地产业协同出海' },
 ]
 
 const STATS = [

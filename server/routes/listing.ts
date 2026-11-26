@@ -109,11 +109,11 @@ router.post('/listing', async (req, res) => {
 })
 
 const FALLBACK_IMAGES: Record<string, string[]> = {
-  silk: ['/samples/silk-scene.jpg'],
-  auto: ['/samples/auto-scene.jpg'],
-  agri: ['/samples/agri-scene.jpg'],
-  chemical: ['/samples/chemical-scene.jpg'],
-  other: ['/samples/silk-scene.jpg'],
+  silk: ['./samples/silk-scene.jpg'],
+  auto: ['./samples/auto-scene.jpg'],
+  agri: ['./samples/agri-scene.jpg'],
+  chemical: ['./samples/chemical-scene.jpg'],
+  other: ['./samples/silk-scene.jpg'],
 }
 
 /** POST /api/image —— 通义万相场景图（异步任务，前端并行调用） */

@@ -15,10 +15,10 @@ const MARKETS = [
 ]
 
 const SAMPLES = [
-  { img: '/samples/silk-product.jpg', name: '桑蚕丝睡衣套装', cat: 'Silk Sleepwear', industry: 'silk' },
-  { img: '/samples/auto-product.jpg', name: '陶瓷刹车片（微型车适配）', cat: 'Ceramic Brake Pads', industry: 'auto' },
-  { img: '/samples/agri-product.jpg', name: '西充有机柑橘礼盒', cat: 'Organic Citrus Gift Box', industry: 'agri' },
-  { img: '/samples/chemical-product.jpg', name: '环保纺织印染助剂', cat: 'Textile Dyeing Auxiliaries', industry: 'chemical' },
+  { img: './samples/silk-product.jpg', name: '桑蚕丝睡衣套装', cat: 'Silk Sleepwear', industry: 'silk' },
+  { img: './samples/auto-product.jpg', name: '陶瓷刹车片（微型车适配）', cat: 'Ceramic Brake Pads', industry: 'auto' },
+  { img: './samples/agri-product.jpg', name: '西充有机柑橘礼盒', cat: 'Organic Citrus Gift Box', industry: 'agri' },
+  { img: './samples/chemical-product.jpg', name: '环保纺织印染助剂', cat: 'Textile Dyeing Auxiliaries', industry: 'chemical' },
 ]
 
 interface ListingResp {
@@ -28,7 +28,7 @@ interface ListingResp {
 }
 
 export default function SellerPage() {
-  const [imagePreview, setImagePreview] = useState<string>('/samples/silk-product.jpg')
+  const [imagePreview, setImagePreview] = useState<string>('./samples/silk-product.jpg')
   const [productName, setProductName] = useState('桑蚕丝睡衣套装')
   const [category, setCategory] = useState('Silk Sleepwear')
   const [params, setParams] = useState('100%桑蚕丝，19姆米，法式滚边工艺，支持定制刺绣LOGO，S-XXL全尺码')
