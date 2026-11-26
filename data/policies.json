@@ -1,0 +1,99 @@
+{
+  "exchangeRate": {
+    "cnyPerUsd": 7.16,
+    "updatedAt": "2026-11-24",
+    "note": "中国外汇交易中心中间价（演示快照）"
+  },
+  "hsCodes": [
+    { "code": "6207.21", "industry": "silk", "nameZh": "丝制针织或钩编睡衣裤", "nameEn": "Silk nightwear, knitted", "dutyNote": "欧盟关税约12%，RCEP项下东盟多国逐年降至0-5%" },
+    { "code": "6214.10", "industry": "silk", "nameZh": "丝制披巾、围巾", "nameEn": "Silk shawls and scarves", "dutyNote": "美国关税约7.5%，欧盟约8%" },
+    { "code": "5007.20", "industry": "silk", "nameZh": "丝机织物（含丝≥85%）", "nameEn": "Woven silk fabrics ≥85%", "dutyNote": "印度关税10%，需提供原产地证" },
+    { "code": "8708.30", "industry": "auto", "nameZh": "制动器及其零件", "nameEn": "Brakes and parts", "dutyNote": "欧盟需ECE R90认证，关税约3-4.5%" },
+    { "code": "8421.23", "industry": "auto", "nameZh": "内燃机滤清器", "nameEn": "Oil/fuel filters for engines", "dutyNote": "东盟关税0-5%（RCEP），中东普遍5%" },
+    { "code": "8482.10", "industry": "auto", "nameZh": "滚珠轴承", "nameEn": "Ball bearings", "dutyNote": "俄罗斯EAC认证，关税约0-8%" },
+    { "code": "0805.21", "industry": "agri", "nameZh": "柑橘属水果（鲜）", "nameEn": "Fresh citrus fruits", "dutyNote": "需输往国植物检疫证书，东南亚准入清单内" },
+    { "code": "2209.00", "industry": "agri", "nameZh": "醋及醋酸制代用品", "nameEn": "Vinegar and substitutes", "dutyNote": "美国需FDA食品设施注册，关税约6.4%" },
+    { "code": "0902.10", "industry": "agri", "nameZh": "绿茶（≤3kg包装）", "nameEn": "Green tea ≤3kg packings", "dutyNote": "欧盟农残MRL严格，需检测报告" },
+    { "code": "3809.91", "industry": "chemical", "nameZh": "纺织工业用整理剂", "nameEn": "Textile finishing agents", "dutyNote": "欧盟REACH注册，MSDS英文版必备" },
+    { "code": "3209.10", "industry": "chemical", "nameZh": "水性涂料（丙烯酸/乙烯基）", "nameEn": "Waterborne acrylic/vinyl paints", "dutyNote": "海运危险品申报视闪点而定" }
+  ],
+  "logistics": [
+    {
+      "mode": "中欧班列（铁路）",
+      "route": "南充/成都国际铁路港 → 马拉舍维奇(波兰) / 莫斯科(俄罗斯)",
+      "transitDays": "12-16天",
+      "costPerCbmUSD": 85,
+      "costPer40HqUSD": 4200,
+      "note": "成都中欧班列集结中心辐射南充，时效比海运快约20天，适合汽配与家纺中高货值订单"
+    },
+    {
+      "mode": "中欧班列（铁路）",
+      "route": "南充/重庆团结村 → 杜伊斯堡(德国)",
+      "transitDays": "14-18天",
+      "costPerCbmUSD": 92,
+      "costPer40HqUSD": 4600,
+      "note": "渝新欧线路，南充经重庆中转，欧盟腹地门到门可选"
+    },
+    {
+      "mode": "海运（整柜）",
+      "route": "上海港 → 鹿特丹 / 汉堡",
+      "transitDays": "32-38天",
+      "costPerCbmUSD": 45,
+      "costPer40HqUSD": 2100,
+      "note": "南充公路短驳至上海/宁波港，大宗低值货物首选"
+    },
+    {
+      "mode": "海运（整柜）",
+      "route": "深圳蛇口 → 迪拜杰贝阿里",
+      "transitDays": "18-22天",
+      "costPerCbmUSD": 38,
+      "costPer40HqUSD": 1600,
+      "note": "中东航线舱位充足，适合丝绸礼品与食品"
+    },
+    {
+      "mode": "空运",
+      "route": "成都双流/天府 → 法兰克福 / 迪拜",
+      "transitDays": "3-5天",
+      "costPerCbmUSD": 650,
+      "costPer40HqUSD": 0,
+      "note": "按公斤计费（约$4.2/kg），样品与高时效订单使用"
+    }
+  ],
+  "compliance": [
+    {
+      "industry": "silk",
+      "market": "欧盟",
+      "requirements": ["纺织品须标注纤维成分（如 100% Mulberry Silk）及洗涤维护标签", "REACH法规SVHC高关注物质检测", "OEKO-TEX Standard 100 为买家普遍要求"]
+    },
+    {
+      "industry": "silk",
+      "market": "美国",
+      "requirements": ["FTC纺织品标签规则：成分+原产国+护理说明", "CPSC阻燃性要求（睡衣类目重点）", "加州65号提案警示评估"]
+    },
+    {
+      "industry": "auto",
+      "market": "欧盟",
+      "requirements": ["制动件须E-mark（ECE R90）认证并在产品标注E标", "REACH/RoHS物质合规", "包装须符合欧盟包装废弃物指令"]
+    },
+    {
+      "industry": "auto",
+      "market": "俄罗斯",
+      "requirements": ["EAC认证（海关联盟技术法规）", "俄文标签与说明书", "GOST标准符合性声明"]
+    },
+    {
+      "industry": "agri",
+      "market": "美国",
+      "requirements": ["FDA食品设施注册", "营养标签(Nutrition Facts)英文化", "酸化食品需FCE/SID登记"]
+    },
+    {
+      "industry": "agri",
+      "market": "东南亚",
+      "requirements": ["输华/输东盟植物检疫证书", "清真认证(Halal)在马来西亚/印尼为强需求", "泰国FDA/印尼BPOM注册视品类而定"]
+    },
+    {
+      "industry": "chemical",
+      "market": "欧盟",
+      "requirements": ["REACH注册或预注册号", "英文MSDS（16项GHS格式）", "CLP法规标签"]
+    }
+  ]
+}

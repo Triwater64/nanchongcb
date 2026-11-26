@@ -1,0 +1,39 @@
+{
+  "updatedAt": "2026-11-25",
+  "hotKeywords": [
+    { "keyword": "mulberry silk pajamas", "industry": "silk", "region": "northamerica", "searches": 48200, "momGrowth": 21 },
+    { "keyword": "silk pillowcase 22 momme", "industry": "silk", "region": "northamerica", "searches": 35600, "momGrowth": 18 },
+    { "keyword": "echarpe soie", "industry": "silk", "region": "europe", "searches": 12800, "momGrowth": 9 },
+    { "keyword": "winter silk loungewear", "industry": "silk", "region": "europe", "searches": 21400, "momGrowth": 27 },
+    { "keyword": "عباءة حرير", "industry": "silk", "region": "middleeast", "searches": 18900, "momGrowth": 34 },
+    { "keyword": "ceramic brake pads Wuling", "industry": "auto", "region": "sea", "searches": 26100, "momGrowth": 35 },
+    { "keyword": "oil filter Toyota Avanza", "industry": "auto", "region": "sea", "searches": 19800, "momGrowth": 29 },
+    { "keyword": "LED headlamp LHD E-mark", "industry": "auto", "region": "europe", "searches": 9400, "momGrowth": 12 },
+    { "keyword": "автозапчасти микроавтобус", "industry": "auto", "region": "russia", "searches": 15200, "momGrowth": 22 },
+    { "keyword": "wheel hub bearing truck", "industry": "auto", "region": "middleeast", "searches": 8700, "momGrowth": 15 },
+    { "keyword": "organic mandarin orange", "industry": "agri", "region": "sea", "searches": 22400, "momGrowth": 31 },
+    { "keyword": "Sichuan vinegar halal", "industry": "agri", "region": "sea", "searches": 5600, "momGrowth": 44 },
+    { "keyword": "instant jelly noodles", "industry": "agri", "region": "northamerica", "searches": 11300, "momGrowth": 26 },
+    { "keyword": "mulberry leaf tea benefits", "industry": "agri", "region": "europe", "searches": 9800, "momGrowth": 19 },
+    { "keyword": "eco textile softener REACH", "industry": "chemical", "region": "sea", "searches": 4300, "momGrowth": 17 },
+    { "keyword": "anti corrosion coating railway", "industry": "chemical", "region": "middleeast", "searches": 6100, "momGrowth": 23 }
+  ],
+  "regionHeat": [
+    { "region": "northamerica", "regionZh": "北美", "heat": 86, "topIndustry": "silk" },
+    { "region": "europe", "regionZh": "欧盟", "heat": 78, "topIndustry": "silk" },
+    { "region": "sea", "regionZh": "东南亚", "heat": 92, "topIndustry": "auto" },
+    { "region": "middleeast", "regionZh": "中东", "heat": 74, "topIndustry": "agri" },
+    { "region": "russia", "regionZh": "俄罗斯/中亚", "heat": 63, "topIndustry": "auto" },
+    { "region": "africa", "regionZh": "非洲", "heat": 45, "topIndustry": "chemical" }
+  ],
+  "districtStats": [
+    { "district": "高坪区", "industry": "silk", "enterprises": 86, "exportGrowth": 18.5 },
+    { "district": "顺庆区", "industry": "silk", "enterprises": 42, "exportGrowth": 12.3 },
+    { "district": "嘉陵区", "industry": "auto", "enterprises": 117, "exportGrowth": 24.7 },
+    { "district": "顺庆区", "industry": "auto", "enterprises": 35, "exportGrowth": 9.8 },
+    { "district": "西充县", "industry": "agri", "enterprises": 58, "exportGrowth": 15.2 },
+    { "district": "阆中市", "industry": "agri", "enterprises": 33, "exportGrowth": 11.6 },
+    { "district": "仪陇县", "industry": "agri", "enterprises": 21, "exportGrowth": 8.4 },
+    { "district": "嘉陵区", "industry": "chemical", "enterprises": 26, "exportGrowth": 13.9 }
+  ]
+}
