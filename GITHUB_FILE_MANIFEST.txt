@@ -1,5 +1,6 @@
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\.env.example
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\.github\workflows\ci.yml
+D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\.github\workflows\deploy-pages.yml
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\.gitignore
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\data\companies.json
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\data\policies.json
@@ -65,4 +66,5 @@ D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\tailwind.con
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\tsconfig.app.json
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\tsconfig.json
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\tsconfig.node.json
+D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\upload-to-github.bat
 D:\CodeBuddyProjects\NanchongCrossBorderDemo_GitHub_20261126_084143\vite.config.ts

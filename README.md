@@ -40,7 +40,8 @@ npm run dev
 本副本仅保留源码、配置、数据、素材和文档（少于 100 个文件），已排除 `node_modules`、`dist`、`.env` 和临时文件。
 
 - **本地运行**：`npm ci` → 复制 `.env.example` 为 `.env` → `npm run dev` → 打开 `http://localhost:5173`
-- **前端部署**：`npm run build` 生成 `dist/`；可部署到 Vercel、Netlify，或 GitHub Pages（Pages 仅托管静态文件）
+- **前端部署**：`npm run build` 生成 `dist/`；`vite.config.ts` 已设 `base: './'`，可直接部署到 GitHub Pages 子路径
+- **GitHub Pages 正确姿势**：仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**；推送 `main` 后 `.github/workflows/deploy-pages.yml` 会自动构建 `dist` 并发布。不要尝试直接发布仓库根目录的 `index.html`（那是 Vite 开发入口，浏览器无法运行 TSX）
 - **后端部署**：`server/` 是 Express 服务，需单独部署到 Render、Railway、Cloud Run 等 Node 主机；配置 `DEEPSEEK_API_KEY`、`DASHSCOPE_API_KEY`、`PORT`
 - **前后端分离**：在部署环境给前端设置 `VITE_API_BASE=https://你的后端域名`，前端 API 请求会自动带上该前缀；留空则走本地 Vite 代理
 - **CI**：`.github/workflows/ci.yml` 在每次 push/pull request 时执行构建校验并上传 `dist` 产物
